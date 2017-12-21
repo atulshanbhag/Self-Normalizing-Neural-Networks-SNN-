@@ -1,0 +1,74 @@
+backend: theano
+class_name: Sequential
+config:
+- class_name: InputLayer
+  config:
+    batch_input_shape: !!python/tuple [null, 784]
+    dtype: float32
+    name: input_1
+    sparse: false
+- class_name: Dense
+  config:
+    activation: linear
+    activity_regularizer: null
+    bias_constraint: null
+    bias_initializer:
+      class_name: Zeros
+      config: {}
+    bias_regularizer: null
+    kernel_constraint: null
+    kernel_initializer:
+      class_name: VarianceScaling
+      config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+    kernel_regularizer: null
+    name: dense_1
+    trainable: true
+    units: 512
+    use_bias: true
+- class_name: Activation
+  config: {activation: selu, name: activation_1, trainable: true}
+- class_name: AlphaDropout
+  config: {name: alpha_dropout_1, rate: 0.2, trainable: true}
+- class_name: Dense
+  config:
+    activation: linear
+    activity_regularizer: null
+    bias_constraint: null
+    bias_initializer:
+      class_name: Zeros
+      config: {}
+    bias_regularizer: null
+    kernel_constraint: null
+    kernel_initializer:
+      class_name: VarianceScaling
+      config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+    kernel_regularizer: null
+    name: dense_2
+    trainable: true
+    units: 512
+    use_bias: true
+- class_name: Activation
+  config: {activation: selu, name: activation_2, trainable: true}
+- class_name: AlphaDropout
+  config: {name: alpha_dropout_2, rate: 0.2, trainable: true}
+- class_name: Dense
+  config:
+    activation: linear
+    activity_regularizer: null
+    bias_constraint: null
+    bias_initializer:
+      class_name: Zeros
+      config: {}
+    bias_regularizer: null
+    kernel_constraint: null
+    kernel_initializer:
+      class_name: VarianceScaling
+      config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+    kernel_regularizer: null
+    name: dense_3
+    trainable: true
+    units: 10
+    use_bias: true
+- class_name: Activation
+  config: {activation: softmax, name: activation_3, trainable: true}
+keras_version: 2.0.8
